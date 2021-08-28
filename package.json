@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/stevaniekanter/Team-Profile-Generator/issues"
   },
-  "homepage": "https://github.com/stevaniekanter/Team-Profile-Generator#readme"
+  "homepage": "https://github.com/stevaniekanter/Team-Profile-Generator#readme",
+  "dependencies": {
+    "inquirer": "^8.1.2",
+    "jest": "^27.1.0"
+  }
 }
