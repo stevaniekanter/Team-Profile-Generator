@@ -1,0 +1,19 @@
+{
+  "name": "profile-generator",
+  "version": "1.0.0",
+  "description": "Team profile generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stevaniekanter/Team-Profile-Generator.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stevaniekanter/Team-Profile-Generator/issues"
+  },
+  "homepage": "https://github.com/stevaniekanter/Team-Profile-Generator#readme"
+}
