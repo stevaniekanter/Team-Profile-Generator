@@ -1,7 +1,7 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 
-const generateHtml = (answer) =>
+const generateHTML = (answer) =>
   `<!DOCTYPE html>
 <html lang="en">
 
@@ -72,7 +72,7 @@ const generateHtml = (answer) =>
 
 </html>`
 
-inquirer.propmp ([
+inquirer.propmt ([
     {
       type: "list",
       name: "manager-role",
