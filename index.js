@@ -30,23 +30,22 @@ const generateHtml = (answer) =>
       <div class="team-member col-12 d-flex justify-content-center";>
         <div class="card employee-card">
 
-        // Manager information
           <div class="card-header">
-            <h2 class="card-title managerName">{{ name }}</h2>
-            <h3 class="card-title"><i class="fas fa-mug-hot mr-2 managerRole"></i>{{ role }}</h3>
+            <h2 class="card-title">${answer.manager}</h2>
+            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.manager-role}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
-              <li class="list-group-item managerID">ID: {{ id }}</li>
-              <li class="list-group-item managerEmail">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
-              <li class="list-group-item managerOfficeNum">Office number: {{ officeNumber }}</li>
+              <li class="list-group-item">ID: ${answer.manager-id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${answer.manager-email}">${answer.manager-email}</a></li>
+              <li class="list-group-item">Office number: ${answer.manager-office}</li>
             </ul>
          </div>
 
         // Engineer information
           <div class="card-header">
-            <h2 class="card-title engineerName">{{ name }}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2 engineerRole"></i>{{ role }}</h3>
+            <h2 class="card-title engineerName">${answer.engineer}</h2>
+            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.new-employee}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
