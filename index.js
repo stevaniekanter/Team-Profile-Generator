@@ -72,7 +72,7 @@ const generateHTML = (answer) =>
 
 </html>`
 
-inquirer.propmt ([
+inquirer.prompt ([
     {
       type: "list",
       name: "manager-role",
