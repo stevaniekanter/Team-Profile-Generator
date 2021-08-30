@@ -29,7 +29,6 @@ const generateHtml = (answer) =>
     <div class="row">
       <div class="team-member col-12 d-flex justify-content-center";>
         <div class="card employee-card">
-
           <div class="card-header">
             <h2 class="card-title">${answer.manager}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.manager-role}</h3>
@@ -40,35 +39,32 @@ const generateHtml = (answer) =>
               <li class="list-group-item">Email: <a href="mailto:${answer.manager-email}">${answer.manager-email}</a></li>
               <li class="list-group-item">Office number: ${answer.manager-office}</li>
             </ul>
-         </div>
-
-        // Engineer information
+          </div>
           <div class="card-header">
-            <h2 class="card-title engineerName">${answer.engineer}</h2>
+            <h2 class="card-title">${answer.engineer}</h2>
             <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.new-employee}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
-              <li class="list-group-item engineerID">ID: {{ id }}</li>
-              <li class="list-group-item engineerEmail">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
-              <li class="list-group-item engineerGitHub">GitHub: <a href="https://github.com/{{ github }}" target="_blank" rel="noopener noreferrer">{{ github }}</a></li>
+              <li class="list-group-item">ID: ${answer.engineer-id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${answer.engineer-email}">${answer.engineer-email}</a></li>
+              <li class="list-group-item">GitHub: <a href="https://github.com/${answer.engineer-github}" target="_blank" rel="noopener noreferrer">${answer.engineer-github}</a></li>
             </ul>
           </div>
-        </div>
 
-        // Intern information
-        <div class="card-header">
-          <h2 class="card-title internName">{{ name }}</h2>
-          <h3 class="card-title"><i class="fas fa-user-graduate mr-2 internRole"></i>{{ role }}</h3>
-        </div>
-        <div class="card-body">
-          <ul class="list-group">
-            <li class="list-group-item internID">ID: {{ id }}</li>
-            <li class="list-group-item internEmail">Email: <a href="mailto:{{ email }}">{{ email }}</a></li>
-            <li class="list-group-item internSchool">School: {{ school }}</li>
-          </ul>
-        </div>
+          <div class="card-header">
+            <h2 class="card-title">${answer.intern}</h2>
+            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${answer.new-employee2}</h3>
+          </div>
+          <div class="card-body">
+            <ul class="list-group">
+              <li class="list-group-item">ID: {${answer.intern-id}</li>
+              <li class="list-group-item">Email: <a href="mailto:${answer.intern-email}">${answer.intern-email}</a></li>
+              <li class="list-group-item">School: ${answer.intern-school}</li>
+            </ul>
+          </div>
 
+        </div>
       </div>
     </div>
   </div>
@@ -156,21 +152,12 @@ inquirer.propmp ([
       message: "Please enter school name",
     },
 ])
+.then((answers) => {
+  const htmlPageContent = generateHTML(answers);
 
-function writeToFile(fileName, data) {
-  return fs.writeFile(fileName, data, function (error) {
-      if (error) {
-          console.log(error);
-      }
-      console.log("File has been created");
-  });
-}
-
-function init() {
-  inquirer.prompt(question).then((data) => {
-      writeToFile("index.htlm", generateHtml({ ...data }));
-  });
-}
-
+  fs.writeFile('index.html', htmlPageContent, (err) =>
+    err ? console.log(err) : console.log('Successfully created index.html!')
+  );
+});
 // Function call to initialize app
 init();
