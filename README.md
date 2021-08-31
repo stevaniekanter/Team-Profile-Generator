@@ -1,5 +1,9 @@
 # Team-Profile-Generator
 
+Deployed URL: https://stevaniekanter.github.io/Team-Profile-Generator/
+
+Github URL: https://github.com/stevaniekanter/Team-Profile-Generator
+
 # Description
 
 In this project, I have created a Node command line application that displays team member information and generates an html file with team member's information from a user input. 
