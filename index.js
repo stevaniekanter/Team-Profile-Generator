@@ -96,16 +96,15 @@ const generateHTML = (answer) =>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>My Team</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" 
-  rel="stylesheet" 
-  integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" 
-  crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="./src/style.css">
 </head>
 
 <body>
   <div class="container-fluid">
     <div class="row">
-      <div class="col-12 jumbotron mb-3 team-header">
+      <div class="col-12 jumbotron team-header">
         <h1 class="text-center">My Team Member</h1>
       </div>
     </div>
@@ -116,8 +115,8 @@ const generateHTML = (answer) =>
       <div class="team-member col-12 d-flex justify-content-center";>
         <div class="card employee-card">
           <div class="card-header">
-            <h2 class="card-title">${answer.manager}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.manager1}</h3>
+            <h2 class="card-title">${answer.managername}</h2>
+            <h3 class="card-title">${answer.manager1}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
@@ -126,9 +125,11 @@ const generateHTML = (answer) =>
               <li class="list-group-item">Office number: ${answer.manageroffice}</li>
             </ul>
           </div>
+        </div>
+        <div class="card employee-card">
           <div class="card-header">
             <h2 class="card-title">${answer.engineer}</h2>
-            <h3 class="card-title"><i class="fas fa-glasses mr-2"></i>${answer.newemployee}</h3>
+            <h3 class="card-title">${answer.newemployee}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
@@ -137,10 +138,11 @@ const generateHTML = (answer) =>
               <li class="list-group-item">GitHub: <a href="https://github.com/${answer.engineergithub}" target="_blank" rel="noopener noreferrer">${answer.engineergithub}</a></li>
             </ul>
           </div>
-
+        </div>
+        <div class="card employee-card">
           <div class="card-header">
-            <h2 class="card-title">${answer.intern}</h2>
-            <h3 class="card-title"><i class="fas fa-user-graduate mr-2"></i>${answer.newemployee2}</h3>
+            <h2 class="card-title">${answer.internname}</h2>
+            <h3 class="card-title">${answer.newemployee2}</h3>
           </div>
           <div class="card-body">
             <ul class="list-group">
@@ -149,7 +151,6 @@ const generateHTML = (answer) =>
               <li class="list-group-item">School: ${answer.internschool}</li>
             </ul>
           </div>
-
         </div>
       </div>
     </div>
